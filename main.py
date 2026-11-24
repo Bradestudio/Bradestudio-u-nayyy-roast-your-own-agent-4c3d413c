@@ -22,8 +22,14 @@ def main():
     assert "\n" not in line, "entry must be a single line"
     out_dir = "/output"
     os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
+    path = os.path.join(out_dir, "entry.txt")
+    with open(path, "w", encoding="utf-8") as f:
         f.write(line + "\n")
+    # Read back and verify what the grader will see: one line, 1-200 chars.
+    with open(path, encoding="utf-8") as f:
+        written = f.read()
+    assert written.strip() == line, "written entry differs from the roast"
+    assert 1 <= len(written.strip()) <= 200, "written entry outside the gate"
 
 
 if __name__ == "__main__":
