@@ -27,3 +27,7 @@ cat /output/entry.txt
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+Built with [make.fun](https://make.fun/bounty/u-nayyy-roast-your-own-agent-4c3d413c?ref=qjs4e9sj) — entry for the "Roast Your Own Agent" bounty.
